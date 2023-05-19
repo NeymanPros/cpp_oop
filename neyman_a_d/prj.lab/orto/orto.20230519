@@ -1,0 +1,128 @@
+#include <iostream>
+
+namespace geo2d {
+    namespace orto {
+
+        class Quad {
+        protected:
+            int w = 0;
+            int h = 0;
+            int x = 0;
+            int y = 0;
+        public:
+            Quad(){};
+
+            Quad(int _x, int _y) {
+                x = _x;
+                y = _y;
+            };
+
+            Quad(int _x, int _y, int _w, int _h) {
+                x = _x;
+                y = _y;
+                w = _w;
+                h = _h;
+            };
+
+            Quad(Quad a()){
+                x = a().x;
+                y = a().y;
+                w = a().w;
+                h = a().h;
+            }
+
+            ~Quad() = default;
+
+            int GetW() {
+                return w;
+            };
+
+            int GetH() {
+                return h;
+            };
+
+            void SetW(int _w) {
+                w = _w;
+            };
+
+            void SetH(int _h) {
+                h = _h;
+            };
+        };
+
+        class Rect : public Quad{
+        public:
+            Rect(){};
+            Rect(int _x, int _y){
+                x = _x;
+                y = _y;
+            };
+
+            Rect(int _x, int _y, int _w, int _h) {
+                x = _x;
+                y = _y;
+                w = _w;
+                h = _h;
+            };
+
+            Rect(Rect a()){
+                x = a().x;
+                y = a().y;
+                w = a().w;
+                h = a().h;
+            }
+
+            ~Rect() = default;
+        };
+
+        class Square : public Quad{
+        public:
+            Square() = default;
+            Square(int  _a){
+                w = _a;
+                h = _a;
+            }
+            Square(int _x, int _y){
+                x = _x;
+                y = _y;
+            }
+            Square(int _x, int _y, int _a){
+                x = _x;
+                y = _y;
+                w = _a;
+                h = _a;
+            }
+
+            Square(Square a()){
+                x = a().x;
+                y = a().y;
+                w = a().w;
+                h = a().h;
+            }
+
+            void SetH(int _a) {
+                w = _a;
+                h = _a;
+            }
+
+            void SetW(int _a){
+                w = _a;
+                h = _a;
+            }
+        };
+
+    };
+};
+
+int main() {
+    geo2d::orto::Quad qa(1, 1, 1, 1);
+    geo2d::orto::Quad qb(qa);
+    geo2d::orto::Rect ra(2, 2, 2, 2);
+    geo2d::orto::Rect rb(3, 3);
+    geo2d::orto::Rect sa(4, 4, 4, 4);
+    geo2d::orto::Rect sb(5, 5);
+
+    rb.SetW(11);
+
+    std::cout << qa.GetH() << " " << qb.GetH() << " " << ra.GetW() << " " << rb.GetW() << " " << sa.GetW() << " " << sb.GetW();
+}
