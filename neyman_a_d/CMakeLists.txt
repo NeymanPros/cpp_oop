@@ -19,3 +19,4 @@ add_subdirectory(prj.test)
 
 target_link_libraries(doctest_test doctest::doctest)
 target_link_libraries(arrayt_test doctest::doctest)
+target_link_libraries(rational_test doctest::doctest)
