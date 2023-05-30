@@ -6,7 +6,7 @@
 TEST_CASE("rational") {
 	int32_t eq = 2;
 	int32_t mn = 2;
-	Rational err(3, 0); //exception; denom_ = 1
+	Rational err(3, 0); //exception
 
 	Rational a(6, 2);
 	Rational b(3, 1); 
