@@ -42,6 +42,11 @@ public:
         }
     }
 
+    Rational(Rational i) {
+        num_ = i.num_;
+        denom_ = i.denom_;
+    }
+
     ~Rational() = default;
 
     int32_t GetNum() {
