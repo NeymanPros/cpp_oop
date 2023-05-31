@@ -42,7 +42,7 @@ public:
         }
     }
 
-    Rational(Rational i) {
+    Rational(Rational &i) {
         num_ = i.num_;
         denom_ = i.denom_;
     }
