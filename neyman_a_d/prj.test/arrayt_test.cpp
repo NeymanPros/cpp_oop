@@ -6,7 +6,6 @@
 TEST_CASE("arraytest") {
 	int i = -4;
 	ArrayT <int> a(5, i);
-	ArrayT <double> err(6, -90.2);
 	CHECK(a[2] == i);
 
 	for (int t = 0; t < a.ssize(); t++) {
