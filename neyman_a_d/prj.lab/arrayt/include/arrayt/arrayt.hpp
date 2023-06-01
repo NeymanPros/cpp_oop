@@ -52,7 +52,7 @@ public:
         delete[] data;
     };
     
-    T &operator[](ptrdiff_t i) {
+    [[nodiscard]]T &operator[](ptrdiff_t i) {
         return *(data + i);
     }
 
