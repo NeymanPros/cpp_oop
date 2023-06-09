@@ -1,4 +1,4 @@
-project(dectest_test)
+project(doctest_test)
 add_executable(doctest_test doctest_test.cpp)
 add_test(NAME doctest_test COMMAND doctest_test)
 
